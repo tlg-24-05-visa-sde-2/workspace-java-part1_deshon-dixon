@@ -11,6 +11,6 @@ class CalculatorClient {
         System.out.println("2 is even? " + calc.isEven(2));
         System.out.println();
 
-        System.out.println("Random number one: " + calc.randomNum1() + "\n" + "Random number two: " + calc.randomNum2());
+        System.out.println("Random number one: " + calc.randomInt() + "\n" + "Random number two: " + calc.randomInt(1,11));
     }
 }

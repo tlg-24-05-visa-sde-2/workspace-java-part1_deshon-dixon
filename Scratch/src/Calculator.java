@@ -13,6 +13,14 @@ class Calculator {
     }
 
     /*
+     * Returns a random integer between 'min' and 'max' (inclusive).
+     * TODO: implement this algorithm
+     */
+    int randomInt(int min, int max) {
+        return (int) (Math.random() * (max - min + 1)) + min;
+    }
+
+    /*
      * Returns a random integer between 1 and 11 (inclusive).
      *
      * HINT: see a class called Math (in package java.lang), look for a helpful method here.
@@ -20,7 +28,7 @@ class Calculator {
      *    Math.methodName()
      */
 
-    int randomNum1() {
+    int randomInt() {
         int result = 0;
         double random = Math.random();
         double scaled = (int) (random * 11) + 1;
@@ -28,8 +36,5 @@ class Calculator {
         return result;
     }
 
-    int randomNum2() {
-        return (int) (Math.random() * 11) + 1;
-    }
 
 }
