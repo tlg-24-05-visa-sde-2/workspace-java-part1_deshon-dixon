@@ -4,15 +4,39 @@
  */
 class Television {
     // properties or attributes - "fields" or "instance variables"
-    String brand = "Toshiba";
-    int volume = 1;
+    private String brand = "Toshiba";
+    private int volume = 1;
 
     // functions or operations - "methods"
-    void turnOn() {
-        System.out.println("Turning on your " + brand + " television to volume " + volume);
+    public void turnOn() {
+        System.out.println("Turning on your " + getBrand() + " television and setting volume to " + getVolume());
     }
 
-    void turnoff () {
+    public void turnoff () {
         System.out.println("Shutting down...goodbye");
+    }
+
+    // generate getters and setters
+    public String getBrand() {
+        return brand;
+    }
+
+    public void setBrand(String brand) {
+        this.brand = brand;
+    }
+
+    public int getVolume() {
+        return volume;
+    }
+
+    public void setVolume(int volume) {
+        this.volume = volume;
+    }
+
+    @Override
+    public String toString() {
+        return "Television: " +
+                "brand=" + brand +
+                ", volume=" + volume;
     }
 }
