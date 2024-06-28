@@ -9,6 +9,7 @@ class Television {
 
     // functions or operations - "methods"
     public void turnOn() {
+        boolean isConnected = verifyInternetConnection();
         System.out.println("Turning on your " + getBrand() + " television and setting volume to " + getVolume());
     }
 
@@ -31,6 +32,10 @@ class Television {
 
     public void setVolume(int volume) {
         this.volume = volume;
+    }
+
+    private boolean verifyInternetConnection() {
+        return true;
     }
 
     @Override
