@@ -48,5 +48,6 @@ class CameraClient {
         System.out.println(cam2);
         System.out.println("-------------------");
         System.out.println();
+        
     }
 }

@@ -9,11 +9,11 @@ class Camera {
 
     // functions
     public void start() {
-        System.out.println("Your " + getBrand() + " is starting... ");
+        System.out.println("Your " + brand + " is starting... ");
     }
 
     public void cameraOn() {
-        System.out.println("Your " + getBrand() + " has turned on: " + "\n" + "Resolution: " + getResolution() + "\n" + "ISO: " + getIso() + "\n" + "Shutter Speed: " + "1/" + getShutterSpeed() + "th" + "\n" + "FrameRate: " + getFrameRate() + "fps" + "\n" + "White Balance: " + getWhiteBalance());
+        System.out.println("Your " + brand + " has turned on: " + "\n" + "Resolution: " + resolution + "\n" + "ISO: " + iso + "\n" + "Shutter Speed: " + "1/" + shutterSpeed + "th" + "\n" + "FrameRate: " + frameRate + "fps" + "\n" + "White Balance: " + whiteBalance);
     }
 
     public void recordOn() {
@@ -29,7 +29,7 @@ class Camera {
     }
 
     public void cameraOff() {
-        System.out.println("Your " + getBrand() + " has been turned off. ");
+        System.out.println("Your " + brand + " has been turned off. ");
     }
 
 
@@ -80,6 +80,10 @@ class Camera {
 
     public void setWhiteBalance(String whiteBalance) {
         this.whiteBalance = whiteBalance;
+    }
+
+    //constructor
+    public Camera() {
     }
 
     @Override
