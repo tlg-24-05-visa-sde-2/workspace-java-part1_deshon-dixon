@@ -7,6 +7,15 @@ class AlarmClock {
     // properties or attributes - these are called "instance variables" or "fields" in Java
     private int snoozeInterval = 5; // default value when client doesn't specify one (instead of 0)
 
+    // constructors
+    public AlarmClock() {
+        // no-op
+    }
+
+    public AlarmClock(int snoozeInterval) {
+        setSnoozeInterval(snoozeInterval);
+    }
+
     // functions or operations - these are called "methods" in Java
     public void snooze() {
         System.out.println("Snoozing for " + snoozeInterval + " minutes");
@@ -28,7 +37,6 @@ class AlarmClock {
      * Purpose: return a string (sentence) describing this object.
      */
 
-    @Override
     public String toString() {
         return "AlarmClock: " +
                 "snoozeInterval=" + snoozeInterval;
