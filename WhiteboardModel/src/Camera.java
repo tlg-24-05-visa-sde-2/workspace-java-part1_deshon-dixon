@@ -1,11 +1,28 @@
 class Camera {
-    // properties or attributes (please limit this to 5 or 6, max)
+    // properties or attributes
     private String brand;
     private String resolution;
     private int iso;
     private int shutterSpeed;
     private double frameRate;
     private String whiteBalance;
+
+    // constructors
+    public Camera() {
+    }
+
+    public Camera(String brand) {
+        setBrand(brand);
+    }
+
+    public Camera(String brand, String resolution, int iso, int shutterSpeed, double frameRate, String whiteBalance) {
+        this(brand);
+        setResolution(resolution);
+        setIso(iso);
+        setShutterSpeed(shutterSpeed);
+        setFrameRate(frameRate);
+        setWhiteBalance(whiteBalance);
+    }
 
     // functions
     public void cameraAction() {
@@ -17,12 +34,13 @@ class Camera {
         cameraOff();
     }
     private void start() {
+        System.out.println();
         System.out.println("Your " + getBrand() + " is starting... ");
         System.out.println();
     }
 
     private void cameraOn() {
-        System.out.println("Your " + getBrand() + " has turned on: " + "\n" + "Resolution: " + getResolution() + "\n" + "ISO: " + getResolution() + "\n" + "Shutter Speed: " + "1/" + getShutterSpeed() + "th" + "\n" + "FrameRate: " + getFrameRate() + "fps" + "\n" + "White Balance: " + getWhiteBalance());
+        System.out.println("Your " + getBrand() + " has turned on: " + "\n" + "Resolution: " + getResolution() + "\n" + "ISO: " + getIso() + "\n" + "Shutter Speed: " + "1/" + getShutterSpeed() + "th" + "\n" + "FrameRate: " + getFrameRate() + "fps" + "\n" + "White Balance: " + getWhiteBalance());
         System.out.println();
     }
 
@@ -45,7 +63,6 @@ class Camera {
         System.out.println("Your " + getBrand() + " has been turned off. ");
         System.out.println();
     }
-
 
     // accessor methods
     public String getBrand() {
@@ -94,10 +111,6 @@ class Camera {
 
     public void setWhiteBalance(String whiteBalance) {
         this.whiteBalance = whiteBalance;
-    }
-
-    //constructor
-    public Camera() {
     }
 
     public String toString() {
