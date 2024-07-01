@@ -10,22 +10,6 @@ class CameraClient {
         cam1.setFrameRate(23.98);
         cam1.setWhiteBalance("Auto");
 
-        System.out.println();
-        cam1.start();
-        System.out.println();
-        cam1.cameraOn();
-        System.out.println();
-        cam1.recordOn();
-        cam1.recordOff();
-        System.out.println();
-        cam1.save();
-        cam1.cameraOff();
-        System.out.println();
-        System.out.println(cam1);
-        System.out.println("-------------------");
-        System.out.println();
-
-
         // Creating instances of camera two.
         Camera cam2 = new Camera();
         cam2.setBrand("FujiFilm XH2S");
@@ -35,19 +19,15 @@ class CameraClient {
         cam2.setFrameRate(120);
         cam2.setWhiteBalance("Tungsten");
 
-        cam2.start();
         System.out.println();
-        cam2.cameraOn();
+        cam1.cameraAction();
         System.out.println();
-        cam2.recordOn();
-        cam2.recordOff();
-        System.out.println();
-        cam2.save();
-        cam2.cameraOff();
-        System.out.println();
+        System.out.println(cam1);
+        System.out.println("-------------------\n");
+        cam2.cameraAction();
         System.out.println(cam2);
-        System.out.println("-------------------");
         System.out.println();
+        System.out.println("-------------------");
         
     }
 }

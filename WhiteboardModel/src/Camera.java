@@ -8,28 +8,42 @@ class Camera {
     private String whiteBalance;
 
     // functions
-    public void start() {
-        System.out.println("Your " + brand + " is starting... ");
+    public void cameraAction() {
+        start();
+        cameraOn();
+        recordOn();
+        recordOff();
+        save();
+        cameraOff();
+    }
+    private void start() {
+        System.out.println("Your " + getBrand() + " is starting... ");
+        System.out.println();
     }
 
-    public void cameraOn() {
-        System.out.println("Your " + brand + " has turned on: " + "\n" + "Resolution: " + resolution + "\n" + "ISO: " + iso + "\n" + "Shutter Speed: " + "1/" + shutterSpeed + "th" + "\n" + "FrameRate: " + frameRate + "fps" + "\n" + "White Balance: " + whiteBalance);
+    private void cameraOn() {
+        System.out.println("Your " + getBrand() + " has turned on: " + "\n" + "Resolution: " + getResolution() + "\n" + "ISO: " + getResolution() + "\n" + "Shutter Speed: " + "1/" + getShutterSpeed() + "th" + "\n" + "FrameRate: " + getFrameRate() + "fps" + "\n" + "White Balance: " + getWhiteBalance());
+        System.out.println();
     }
 
-    public void recordOn() {
+    private void recordOn() {
         System.out.println("Camera is recording... ");
+        System.out.println();
     }
 
-    public void recordOff() {
+    private void recordOff() {
         System.out.println("Recording has stopped. ");
+        System.out.println();
     }
 
-    public void save() {
+    private void save() {
         System.out.println("Your footage has been saved. ");
+        System.out.println();
     }
 
     public void cameraOff() {
-        System.out.println("Your " + brand + " has been turned off. ");
+        System.out.println("Your " + getBrand() + " has been turned off. ");
+        System.out.println();
     }
 
 
@@ -86,14 +100,13 @@ class Camera {
     public Camera() {
     }
 
-    @Override
     public String toString() {
         return "Camera: " +
-                "brand='" + brand + '\'' +
-                ", resolution='" + resolution + '\'' +
-                ", iso=" + iso +
-                ", shutterSpeed=" + shutterSpeed +
-                ", frameRate=" + frameRate +
-                ", whiteBalance='" + whiteBalance + '\'';
+                "Brand = '" + getBrand() + '\'' +
+                ", Resolution = '" + getResolution() + '\'' +
+                ", ISO = " + getIso() +
+                ", Shutter Speed = " + getShutterSpeed() +
+                ", Frame Rate = " + getFrameRate() +
+                ", White Balance = " + getWhiteBalance() + '\'';
     }
 }
