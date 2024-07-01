@@ -7,11 +7,25 @@ class Television {
     private String brand = "Toshiba";
     private int volume = 1;
 
+    // constructors
+    public Television() {
+
+    }
+
+    public Television(String brand) {
+        setBrand(brand);
+    }
+
+    public Television(String brand, int volume) {
+        this(brand);
+        setVolume(volume);
+    }
+
     // functions or operations - "methods"
     public void turnOn() {
         boolean isConnected = verifyInternetConnection();
+//        System.out.println(isConnected);
         System.out.println("Turning on your " + getBrand() + " television and setting volume to " + getVolume());
-        System.out.println(isConnected);
     }
 
     public void turnoff () {

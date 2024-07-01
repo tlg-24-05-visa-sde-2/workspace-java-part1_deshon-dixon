@@ -8,18 +8,15 @@ class TelevisionClient {
         // create instances of Television and set its properties
         Television tv1 = new Television();
         tv1.setBrand("Samsung");
-        tv1.setVolume(32);
+        tv1.setVolume(36);
 
-        Television tv2 = new Television();
-        tv2.setBrand("Sony");
-        tv2.setVolume(50);
+        Television tv2 = new Television("Sony", 50);
 
-        Television tv3 = new Television();
+        Television tv3 = new Television("LG");
 
         tv1.turnOn();
         tv1.turnoff();
-//        tv1.verifyInternetConnection();
-        System.out.println(tv1.toString()); // toString automatically called
+        System.out.println(tv1);
         System.out.println();
 
         tv2.turnOn();
