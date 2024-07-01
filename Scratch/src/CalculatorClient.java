@@ -9,8 +9,9 @@ class CalculatorClient {
         System.out.println("difference is: " + calc.subtract(1.1,3.1)); // here we pass doubles
 
         System.out.println("2 is even? " + calc.isEven(2));
+
         System.out.println();
 
-        System.out.println("Random number one: " + calc.randomInt() + "\n" + "Random number two: " + calc.randomInt(1,11));
+        System.out.println("default version: " + calc.randomInt() + "\n" + "min-max version: " + calc.randomInt(5,16) + "\n" + "one to max version: " + calc.randomInt(20));
     }
 }

@@ -16,8 +16,23 @@ class Calculator {
      * Returns a random integer between 'min' and 'max' (inclusive).
      * TODO: implement this algorithm
      */
-    int randomInt(int min, int max) {
-        return (int) (Math.random() * (max - min + 1)) + min;
+    int randomInt(int min, int max) { // Min = 5 and Max = 16
+        int result = 0;
+
+        double random = Math.random();                      // 0.0000 to 0.9999
+        double scaled = (random * (max - min + 1)) + min;   // 0.0000 to 11.9999
+        double lifted = scaled + min;                       // 5.0000 to 16.9999
+        result = (int) lifted;                              // Downcast now its 5 to 16
+
+        return result;
+    }
+
+    /*
+     * Returns a random integer between 1 and 'max' (inclusive)
+     */
+
+    int randomInt(int max) {
+        return randomInt(1, max);  // delegate to "min-max" version, passing 1 and 'max'
     }
 
     /*
@@ -27,14 +42,14 @@ class Calculator {
      * NOTE: these methods are all "static," which means you call them as follows:
      *    Math.methodName()
      */
-
     int randomInt() {
-        int result = 0;
-        double random = Math.random();
-        double scaled = (int) (random * 11) + 1;
-        result = (int) scaled;   // explicit downcast from double to int
-        return result;
+//        int result = 0;
+//
+//        double random = Math.random();
+//        double scaled = (random * 11) + 1;
+//        result = (int) scaled;   // explicit downcast from double to int
+//
+//        return result;
+        return randomInt(1, 11);
     }
-
-
 }
