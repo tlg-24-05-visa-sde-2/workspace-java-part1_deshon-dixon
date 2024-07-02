@@ -1,18 +1,36 @@
 class Camera {
+    // static fields
+    public static final int MIN_ISO = 160;
+    public static final int MAX_ISO = 5000;
+
+    private static int cameraCount = 0;
+
+    // static accessor methods
+    public static int getCameraCount() {
+        return cameraCount;
+    }
+
     // properties or attributes
-    private String brand;
-    private String resolution;
-    private int iso;
-    private int shutterSpeed;
-    private double frameRate;
-    private String whiteBalance;
+    private String brand = "Canon EOS Rebel T7i";
+    private String resolution = "1080p";
+    private int iso = 160;
+    private int shutterSpeed = 50;
+    private double frameRate = 30;
+    private String whiteBalance = "Auto";
 
     // constructors
     public Camera() {
+        cameraCount++;
     }
 
     public Camera(String brand) {
+        this();
         setBrand(brand);
+    }
+
+    public Camera(String brand, String resolution) {
+        this(brand);
+        setResolution(resolution);
     }
 
     public Camera(String brand, String resolution, int iso, int shutterSpeed, double frameRate, String whiteBalance) {
@@ -78,7 +96,17 @@ class Camera {
     }
 
     public void setResolution(String resolution) {
-        this.resolution = resolution;
+        if (resolution.equalsIgnoreCase("720p") ||
+                resolution.equalsIgnoreCase("1080p") ||
+                resolution.equalsIgnoreCase("4K") ||
+                resolution.equalsIgnoreCase("5.9K")) {
+            System.out.println("PASSED");
+            this.resolution = resolution;
+        } else {
+            System.out.println("ERROR: Resolution provided is invalid. " +
+                    "Resolution will default to: " + getResolution() + ". " +
+                    "Must be 720p, 1080p, 4K, or 5.9K.");
+        }
     }
 
     public int getIso() {
@@ -86,7 +114,12 @@ class Camera {
     }
 
     public void setIso(int iso) {
-        this.iso = iso;
+        if (iso >= MIN_ISO && iso <= MAX_ISO) {
+            System.out.println("PASSED");
+            this.iso = iso;
+        } else {
+            System.out.println("ERROR: " + "ISO provided is invalid. " + "ISO will remain: " + getIso() + ". " + "Must be between " + MIN_ISO + " and " + MAX_ISO + ".");
+        }
     }
 
     public int getShutterSpeed() {
@@ -115,11 +148,11 @@ class Camera {
 
     public String toString() {
         return "Camera: " +
-                "Brand = '" + getBrand() + '\'' +
-                ", Resolution = '" + getResolution() + '\'' +
+                "Brand = " + getBrand() +
+                ", Resolution = " + getResolution() +
                 ", ISO = " + getIso() +
                 ", Shutter Speed = " + getShutterSpeed() +
                 ", Frame Rate = " + getFrameRate() +
-                ", White Balance = " + getWhiteBalance() + '\'';
+                ", White Balance = " + getWhiteBalance() ;
     }
 }
