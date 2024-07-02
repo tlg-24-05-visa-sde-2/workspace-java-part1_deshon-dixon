@@ -10,12 +10,13 @@ class TelevisionClient {
         System.out.println(Television.getInstanceCount() + " instances");
         System.out.println();
 
-        // create instances of Television and set its properties
+        // create an instances of Television and give it the maximum volume
         Television tv1 = new Television();
         tv1.setBrand("Samsung");
-        tv1.setVolume(Television.MAX_VOLUME);
+        tv1.setVolume(Television.MAX_VOLUME);  // CRANK IT UP !!!
 
-        Television tv2 = new Television("Sony", Television.MIN_VOLUME);
+        // create an instances of Television and give it the minimum volume
+        Television tv2 = new Television("Sony", Television.MIN_VOLUME);  // Turn it down.
 
         Television tv3 = new Television("LG");
 
