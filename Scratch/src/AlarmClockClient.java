@@ -12,7 +12,7 @@ class AlarmClockClient {
         clock1.setSnoozeInterval(7);  // this will be disallowed next week
 
 
-        // create a 2nd AlarmClock object via its smoozeInterval ctor (do it in one shot)
+        // create a 2nd AlarmClock object via its snoozeInterval ctor (do it in one shot)
         AlarmClock clock2 = new AlarmClock(10);
 
         // create a 3rd AlarmClock object, but this time DON'T give it a snoozeInterval
