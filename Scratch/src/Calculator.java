@@ -23,7 +23,7 @@ class Calculator {
         int result = 0;
 
         double random = Math.random();                      // 0.0000 to 0.9999
-        double scaled = (random * (max - min + 1)) + min;   // 0.0000 to 11.9999
+        double scaled = (random * (max - min + 1));   // 0.0000 to 11.9999
         double lifted = scaled + min;                       // 5.0000 to 16.9999
         result = (int) lifted;                              // Downcast now its 5 to 16
 
