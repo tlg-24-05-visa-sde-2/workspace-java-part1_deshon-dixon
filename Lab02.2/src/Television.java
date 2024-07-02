@@ -3,16 +3,22 @@
  * It has properties/attributes, it has business methods, but NO main() method.
  */
 class Television {
+    // class-level ("static") variables - these live in the "shared area," up "above"
+    public static final int MIN_VOLUME = 0;
+    public static final int MAX_VOLUME = 100;
+    private static int instanceCount = 0;
+
     // properties or attributes - "fields" or "instance variables"
     private String brand = "Toshiba";
     private int volume = 1;
 
     // constructors
     public Television() {
-
+        instanceCount++;
     }
 
     public Television(String brand) {
+        this();
         setBrand(brand);
     }
 
@@ -24,7 +30,6 @@ class Television {
     // functions or operations - "methods"
     public void turnOn() {
         boolean isConnected = verifyInternetConnection();
-//        System.out.println(isConnected);
         System.out.println("Turning on your " + getBrand() + " television and setting volume to " + getVolume());
     }
 
@@ -51,6 +56,10 @@ class Television {
 
     public void setVolume(int volume) {
         this.volume = volume;
+    }
+
+    public static int getInstanceCount() {
+        return instanceCount;
     }
 
     public String toString() {
