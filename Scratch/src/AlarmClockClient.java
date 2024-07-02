@@ -15,15 +15,16 @@ class AlarmClockClient {
         // create a 2nd AlarmClock object via its snoozeInterval ctor (do it in one shot)
         AlarmClock clock2 = new AlarmClock(10);
 
-        // create a 3rd AlarmClock object, but this time DON'T give it a snoozeInterval
-        AlarmClock clock3 = new AlarmClock();
+        // create a 3rd AlarmClock object, and I want its snoozeInterval to be large as possible
+        AlarmClock clock3 = new AlarmClock(AlarmClock.MAX_INTERVAL); // as long as possible
 
         // make them snooze()
         clock1.snooze();
         clock2.snooze();
         clock3.snooze();
 
-        System.out.println(clock1);
+        // show their toString() methods in action
+        System.out.println(clock1.toString());  // toString is automatically called
         System.out.println(clock2);
         System.out.println(clock3);
 

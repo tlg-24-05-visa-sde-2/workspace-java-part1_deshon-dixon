@@ -4,7 +4,16 @@
  */
 
 class AlarmClock {
+    // class ("static") fields - ONE copy, shared among all instances
+    // these live up in the "shared zone," up "above" all the instances
+    public static final int MIN_INTERVAL = 1;  // class constant (ALL_CAPS)
+    public static final int MAX_INTERVAL = 20;
+    private static int nextId = 1;
+
+    // everything below here is present in EACH instance of AlarmClock
+
     // properties or attributes - these are called "instance variables" or "fields" in Java
+    private int id;
     private int snoozeInterval = 5; // default value when client doesn't specify one (instead of 0)
 
     // constructors
@@ -14,6 +23,7 @@ class AlarmClock {
 
     public AlarmClock(int snoozeInterval) {
         setSnoozeInterval(snoozeInterval);
+        this.id = nextId++;
     }
 
     // functions or operations - these are called "methods" in Java
@@ -26,14 +36,18 @@ class AlarmClock {
         return snoozeInterval;
     }
 
+    public int getId() {
+        return id;
+    }
+
     // TODO: implement constraint - must be between 1 and 20 (inclusive)
     // if incoming value is "valid," we take it, i.e., assign to the private field
     // otherwise, we reject it with an error message
     public void setSnoozeInterval(int snoozeInterval) {
-        if (snoozeInterval >= 1 && snoozeInterval <= 20) {
-            this.snoozeInterval = snoozeInterval;
-        } else {
-            System.out.println("Invalid snooze interval: " + snoozeInterval + ". " + "Must be between 1 and 20. (inclusive).");
+        if (snoozeInterval >= MIN_INTERVAL && snoozeInterval <= MAX_INTERVAL) {   // valid input
+            this.snoozeInterval = snoozeInterval;            // assign to private field
+        } else {                                             // invalid
+            System.out.println("Invalid snooze interval: " + snoozeInterval + ". " + "Must be between " + MIN_INTERVAL + " and " + MAX_INTERVAL + " (inclusive).");
         }
     }
 
@@ -42,7 +56,7 @@ class AlarmClock {
      */
 
     public String toString() {
-        return "AlarmClock: " +
-                "snoozeInterval=" + getSnoozeInterval();
+        return "AlarmClock: id=" + getId() +
+                ", snoozeInterval=" + getSnoozeInterval();
     }
 }
