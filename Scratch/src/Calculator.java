@@ -1,14 +1,17 @@
+/*
+ * This is an "all-static" class, i.e., it has nothing but static methods.
+ */
 class Calculator {
 
-    double add(double a, double b) {
+    public static double add(double a, double b) {
         return (a + b);
     }
 
-    double subtract(double a, double b) {
+    public static double subtract(double a, double b) {
         return a - b;
     }
 
-    boolean isEven(int value) {
+    public static boolean isEven(int value) {
         return value % 2 == 0;
     }
 
@@ -16,7 +19,7 @@ class Calculator {
      * Returns a random integer between 'min' and 'max' (inclusive).
      * TODO: implement this algorithm
      */
-    int randomInt(int min, int max) { // Min = 5 and Max = 16
+    public static int randomInt(int min, int max) { // Min = 5 and Max = 16
         int result = 0;
 
         double random = Math.random();                      // 0.0000 to 0.9999
@@ -31,7 +34,7 @@ class Calculator {
      * Returns a random integer between 1 and 'max' (inclusive)
      */
 
-    int randomInt(int max) {
+    public static int randomInt(int max) {
         return randomInt(1, max);  // delegate to "min-max" version, passing 1 and 'max'
     }
 
@@ -42,7 +45,7 @@ class Calculator {
      * NOTE: these methods are all "static," which means you call them as follows:
      *    Math.methodName()
      */
-    int randomInt() {
+    public static int randomInt() {
 //        int result = 0;
 //
 //        double random = Math.random();
