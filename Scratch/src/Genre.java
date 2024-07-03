@@ -1,3 +1,3 @@
-public enum Genre {
+enum Genre {
     ANIME, DRAMA, HORROR, DOCUMENTARY, MYSTERY, SCI_FI, INTERNATIONAL, FAMILY
 }
