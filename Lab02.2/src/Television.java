@@ -21,6 +21,7 @@ class Television {
     private int volume = 1;
     private boolean isMuted;
     private int oldVolume;
+    private DisplayType display = DisplayType.LED;
 
     // constructors - these get called when the client says "new"
     public Television() {
@@ -28,14 +29,20 @@ class Television {
     }
 
     public Television(String brand) {
-        this();             // delegate to no-arg constructor above for the increment
-        setBrand(brand);    // delegate to setter for any validation/conversion it might be doing
+        this();                       // delegate to no-arg constructor above for the increment
+        setBrand(brand);              // delegate to setter for any validation/conversion it might be doing
     }
 
-    public Television(String brand, int volume) {
-        this(brand);        // delegate to neighboring constructor above me for 'brand'
-        setVolume(volume);  // handle 'volume'
+    public Television (String brand, int volume) {
+        this(brand);
+        setVolume(volume);
+        setDisplay(display);
     }
+    public Television(String brand, int volume, DisplayType display) {
+        this(brand, volume);        // delegate to neighboring constructor above me for 'brand'
+        setDisplay(display);
+    }
+
 
     // functions or operations - "methods"
     public void turnOn() {
@@ -96,11 +103,20 @@ class Television {
         return isMuted;
     }
 
+    public DisplayType getDisplay() {
+        return display;
+    }
+
+    public void setDisplay(DisplayType display) {
+        this.display = display;
+    }
+
     public String toString() {
         String volumeString = isMuted ? "<muted>" : String.valueOf(getVolume());
         return "Television: " +
                 "Brand = " + getBrand() +
-                ", Volume = " + volumeString;
+                ", Volume = " + volumeString +
+                ", DisplayType = " + getDisplay();
     }
 
 }

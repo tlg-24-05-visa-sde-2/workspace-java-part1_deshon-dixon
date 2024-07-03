@@ -14,9 +14,10 @@ class TelevisionClient {
         Television tv1 = new Television();
         tv1.setBrand("Samsung");
         tv1.setVolume(Television.MAX_VOLUME);  // CRANK IT UP !!!
+        tv1.setDisplay(DisplayType.OLED);
 
         // create an instances of Television and give it the minimum volume
-        Television tv2 = new Television("Sony", Television.MIN_VOLUME);  // Turn it down.
+        Television tv2 = new Television("Sony", Television.MIN_VOLUME, DisplayType.PLASMA);  // Turn it down.
 
         Television tv3 = new Television("LG");
 

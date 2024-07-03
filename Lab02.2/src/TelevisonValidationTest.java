@@ -7,7 +7,7 @@ class TelevisonValidationTest {
         System.out.println("CONSTRUCTOR TEST");
         System.out.println("----------------");
         System.out.println();
-        Television tv = new Television("Samsung", -1);
+        Television tv = new Television("Samsung", -1, DisplayType.PLASMA);
         System.out.println("[" + "Brand set to: " + tv.getBrand() + "]");
         System.out.println("[" + "Volume set to: " + tv.getVolume() + "]");
         System.out.println();
@@ -22,6 +22,7 @@ class TelevisonValidationTest {
         tv.setVolume(1);
         System.out.println("[" + "Volume set to: " + tv.getVolume() + "]");
         System.out.println();
+        tv.setDisplay(DisplayType.OLED);
         System.out.println(tv);
         System.out.println();
 
@@ -35,6 +36,7 @@ class TelevisonValidationTest {
         System.out.println();
         System.out.println("[" + "Volume set to: " + tv.getVolume() + "]");
         System.out.println();
+        tv.setDisplay(DisplayType.CRT);
         System.out.println(tv);
         System.out.println();
 
@@ -62,6 +64,7 @@ class TelevisonValidationTest {
         tv.setVolume(100);
         System.out.println("[" + "Volume set to: " + tv.getVolume() + "]");
         System.out.println();
+        tv.setDisplay(DisplayType.CRT);
         System.out.println(tv);
         System.out.println();
 
@@ -84,6 +87,7 @@ class TelevisonValidationTest {
         tv.setBrand("LG");
         System.out.println("[" + "Brand set to: " + tv.getBrand() + "]");
         System.out.println();
+        tv.setDisplay(DisplayType.OLED);
         System.out.println(tv);
         System.out.println();
 
@@ -107,6 +111,7 @@ class TelevisonValidationTest {
         System.out.println();
         System.out.println("[" + "Brand set to: " + tv.getBrand() + "]");
         System.out.println();
+        tv.setDisplay(DisplayType.LED);
         System.out.println(tv);
         System.out.println();
 }
