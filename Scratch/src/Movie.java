@@ -1,8 +1,8 @@
 class Movie {
     // fields or instance variables
     private String title;
-    private int releaseYear;
-    private double revenue;
+    private Integer releaseYear;
+    private Double revenue;
     private Rating rating;
     private Genre genre;
 
@@ -16,10 +16,10 @@ class Movie {
         setGenre(genre);
     }
 
-    public Movie(String title, int releaseYear, double revenue, Rating rating, Genre genre) {
+    public Movie(String title, Integer releaseYear, Double revenue, Rating rating, Genre genre) {
         this(title, genre);                     // delegate to ctor above me for title
-        setReleaseYear(releaseYear);     // handle the rest of them myself
-        setRevenue(revenue);             // by delegating to their respective setters
+        setReleaseYear(releaseYear);            // handle the rest of them myself
+        setRevenue(revenue);                    // by delegating to their respective setters
         setRating(rating);
     }
 
@@ -35,19 +35,19 @@ class Movie {
         this.title = title;
     }
 
-    public int getReleaseYear() {
+    public Integer getReleaseYear() {
         return releaseYear;
     }
 
-    public void setReleaseYear(int releaseYear) {
+    public void setReleaseYear(Integer releaseYear) {
         this.releaseYear = releaseYear;
     }
 
-    public double getRevenue() {
+    public Double getRevenue() {
         return revenue;
     }
 
-    public void setRevenue(double revenue) {
+    public void setRevenue(Double revenue) {
         this.revenue = revenue;
     }
 
