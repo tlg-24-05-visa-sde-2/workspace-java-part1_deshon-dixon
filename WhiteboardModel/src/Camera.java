@@ -149,12 +149,6 @@ class Camera {
     }
 
     public String toString() {
-        return "Camera: " +
-                "Brand = " + getBrand() +
-                ", Resolution = " + getResolution() +
-                ", ISO = " + getIso() +
-                ", Shutter Speed = " + getShutterSpeed() +
-                ", Frame Rate = " + getFrameRate() +
-                ", White Balance = " + getWhiteBalance() ;
+        return String.format("Camera: Brand = %s, Resolution = %s, ISO = %s, Shutter Speed = %s, Frame Rate = %.0f, White Balance = %s ", getBrand(), getResolution(), getIso(), getShutterSpeed(), getFrameRate(), getWhiteBalance());
     }
 }
