@@ -1,13 +1,17 @@
 class CameraValidationTest {
 
     public static void main(String[] args) {
+        int min_iso = 160;
+        int max_iso = 5000;
+
         Camera cam = new Camera();
+
+        //    ---------- ISO VALIDATION TESTS -----------
 
         // ISO validation: 1
         System.out.println();
         System.out.println("Test 1");
         System.out.println("------");
-        System.out.println();
         cam.setIso(500);
         System.out.println();
         System.out.println("[" + "ISO set to: " + cam.getIso() + "]");
@@ -31,13 +35,14 @@ class CameraValidationTest {
         System.out.println();
         System.out.println("Test 3");
         System.out.println("------");
-        System.out.println();
         cam.setIso(5000);
         System.out.println();
         System.out.println("[" + "ISO set to: " + cam.getIso() + "]");
         System.out.println();
         System.out.println(cam);
         System.out.println();
+
+        //    ---------- RESOLUTION VALIDATION TESTS -----------
 
         // Resolution validation: 1
         System.out.println();
@@ -55,7 +60,6 @@ class CameraValidationTest {
         System.out.println();
         System.out.println("Test 5");
         System.out.println("------");
-        System.out.println();
         cam.setResolution("720p");
         System.out.println();
         System.out.println("[" + "Resolution set to: " + cam.getResolution() + "]");
@@ -67,7 +71,6 @@ class CameraValidationTest {
         System.out.println();
         System.out.println("Test 6");
         System.out.println("------");
-        System.out.println();
         cam.setResolution("5.9K");
         System.out.println();
         System.out.println("[" + "Resolution set to: " + cam.getResolution() + "]");

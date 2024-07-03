@@ -15,8 +15,8 @@ class Camera {
     private String resolution = "1080p";
     private int iso = 160;
     private int shutterSpeed = 50;
-    private double frameRate = 30;
-    private String whiteBalance = "Auto";
+    private double frameRate = 30.0;
+    private WhiteBalance whiteBalance = WhiteBalance.AUTO;
 
     // constructors
     public Camera() {
@@ -33,7 +33,7 @@ class Camera {
         setResolution(resolution);
     }
 
-    public Camera(String brand, String resolution, int iso, int shutterSpeed, double frameRate, String whiteBalance) {
+    public Camera(String brand, String resolution, int iso, int shutterSpeed, double frameRate, WhiteBalance whiteBalance) {
         this(brand);
         setResolution(resolution);
         setIso(iso);
@@ -100,7 +100,6 @@ class Camera {
                 resolution.equalsIgnoreCase("1080p") ||
                 resolution.equalsIgnoreCase("4K") ||
                 resolution.equalsIgnoreCase("5.9K")) {
-            System.out.println("PASSED");
             this.resolution = resolution;
         } else {
             System.out.println("ERROR: Resolution provided is invalid. " +
@@ -114,11 +113,11 @@ class Camera {
     }
 
     public void setIso(int iso) {
+
         if (iso >= MIN_ISO && iso <= MAX_ISO) {
-            System.out.println("PASSED");
             this.iso = iso;
         } else {
-            System.out.println("ERROR: " + "ISO provided is invalid. " + "ISO will remain: " + getIso() + ". " + "Must be between " + MIN_ISO + " and " + MAX_ISO + ".");
+            System.out.println("ERROR: " + "ISO provided " + getIso() + " is invalid. " + "ISO will remain: " + getIso() + ". " + "Must be between " + MIN_ISO + " and " + MAX_ISO + ".");
         }
     }
 
@@ -138,11 +137,15 @@ class Camera {
         this.frameRate = frameRate;
     }
 
-    public String getWhiteBalance() {
+    public static void setCameraCount(int cameraCount) {
+        Camera.cameraCount = cameraCount;
+    }
+
+    public WhiteBalance getWhiteBalance() {
         return whiteBalance;
     }
 
-    public void setWhiteBalance(String whiteBalance) {
+    public void setWhiteBalance(WhiteBalance whiteBalance) {
         this.whiteBalance = whiteBalance;
     }
 
