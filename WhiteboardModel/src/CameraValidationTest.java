@@ -1,9 +1,6 @@
 class CameraValidationTest {
 
     public static void main(String[] args) {
-        int min_iso = 160;
-        int max_iso = 5000;
-
         Camera cam = new Camera();
 
         //    ---------- ISO VALIDATION TESTS -----------

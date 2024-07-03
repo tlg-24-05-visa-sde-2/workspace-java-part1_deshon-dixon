@@ -34,8 +34,7 @@ class Camera {
     }
 
     public Camera(String brand, String resolution, int iso, int shutterSpeed, double frameRate, WhiteBalance whiteBalance) {
-        this(brand);
-        setResolution(resolution);
+        this(brand, resolution);
         setIso(iso);
         setShutterSpeed(shutterSpeed);
         setFrameRate(frameRate);
