@@ -3,21 +3,24 @@ class Movie {
     private String title;
     private int releaseYear;
     private double revenue;
+    private Rating rating;
+    private Genre genre;
 
     //constructors - these get called when the client says "new"
-    public Movie() {
-        // no-op
-    }
-
     public Movie(String title) {
         setTitle(title);
     }
 
-    public Movie(String title, int releaseYear, double revenue) {
-        // delegate to setter for any data validation/conversion they might be doing
-        this(title);                     // delegate to ctor above me for title
+    public Movie(String title, Genre genre) {
+        this(title);
+        setGenre(genre);
+    }
+
+    public Movie(String title, int releaseYear, double revenue, Rating rating, Genre genre) {
+        this(title, genre);                     // delegate to ctor above me for title
         setReleaseYear(releaseYear);     // handle the rest of them myself
         setRevenue(revenue);             // by delegating to their respective setters
+        setRating(rating);
     }
 
     // business methods or "action" methods
@@ -48,10 +51,27 @@ class Movie {
         this.revenue = revenue;
     }
 
+    public Rating getRating() {
+        return rating;
+    }
+
+    public void setRating(Rating rating) {
+        this.rating = rating;
+    }
+
+    public Genre getGenre() {
+        return genre;
+    }
+
+    public void setGenre(Genre genre) {
+        this.genre = genre;
+    }
+
     public String toString() {
-        return "Movie: " +
-                "title= " + getTitle() +
+        return "Movie: title= " + getTitle() +
                 ", releaseYear= " + getReleaseYear() +
-                ", revenue= $" + getRevenue();
+                ", revenue= $" + getRevenue() +
+                ", rating= " + getRating() +
+                ", genre= " + getGenre();
     }
 }
