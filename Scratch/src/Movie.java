@@ -68,7 +68,7 @@ class Movie {
     }
 
     public String toString() {
-        return String.format("Movie: title=%s, releaseYear=%s, revenue=%s, rating=%s, genre=%s", getTitle(), getReleaseYear(), (getRevenue() == null) ? "N/A" : String.format("%,.2f", getRevenue()), getRating(), getGenre());
+        return String.format("Movie: title=%s, releaseYear=%s, revenue=%s, rating=%s, genre=%s", getTitle(), getReleaseYear(), (getRevenue() == null) ? "null" : String.format("%,.2f", getRevenue()), getRating(), getGenre());
 
 //        return "Movie: title= " + getTitle() +
 //                ", releaseYear= " + getReleaseYear() +
