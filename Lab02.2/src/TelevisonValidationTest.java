@@ -8,6 +8,8 @@ class TelevisonValidationTest {
         System.out.println("----------------");
         System.out.println();
         Television tv = new Television("Samsung", -1, DisplayType.PLASMA);
+        System.out.println();
+        tv.setVolume(3);
         System.out.println("[" + "Brand set to: " + tv.getBrand() + "]");
         System.out.println("[" + "Volume set to: " + tv.getVolume() + "]");
         System.out.println();

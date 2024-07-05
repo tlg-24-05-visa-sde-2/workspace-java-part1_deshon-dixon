@@ -78,7 +78,6 @@ class Television {
         if (brand.equalsIgnoreCase("Samsung") ||
                 brand.equalsIgnoreCase("LG") ||
                 brand.equalsIgnoreCase("Sony")) {
-            System.out.println("PASSED");
             this.brand = brand.toUpperCase();
         } else {
             System.out.println("ERROR: Invalid TV Brand. TV Brand must be Samsung, LG, or Sony.");
@@ -91,11 +90,11 @@ class Television {
 
     public void setVolume(int volume) {
         if (volume >= MIN_VOLUME && volume <= MAX_VOLUME) {
-            System.out.println("PASSED");
             this.volume = volume;
             isMuted = false;
         } else {
-            System.out.println("ERROR: Invalid volume: " + volume + ". Volume must be between " + MIN_VOLUME + " and " + MAX_VOLUME + "." + " Volume will remain: " + getVolume());
+//            System.out.println("ERROR: Invalid volume: " + volume + ". Volume must be between " + MIN_VOLUME + " and " + MAX_VOLUME + "." + " Volume will remain: " + getVolume());
+            System.out.printf(" ERROR: Invalid volume %s. Volume must be between %s and %s. Volume will remain: %s. \n", volume, MIN_VOLUME, MAX_VOLUME, getVolume());
         }
     }
 
@@ -113,10 +112,13 @@ class Television {
 
     public String toString() {
         String volumeString = isMuted ? "<muted>" : String.valueOf(getVolume());
-        return "Television: " +
-                "Brand = " + getBrand() +
-                ", Volume = " + volumeString +
-                ", DisplayType = " + getDisplay();
+
+        return String.format("Television: brand=%s volume=%s displayType=%s", getBrand(), volumeString, getDisplay());
+
+//        return "Television: " +
+//                "Brand = " + getBrand() +
+//                ", Volume = " + volumeString +
+//                ", DisplayType = " + getDisplay();
     }
 
 }
