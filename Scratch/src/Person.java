@@ -1,4 +1,5 @@
 import java.time.LocalDate;
+import java.time.Period;
 
 /*
  * An immutable class.
@@ -15,11 +16,23 @@ class Person {
         this.birthDate = birthDate;
     }
 
-    public String getName() {
+    /*
+     * Returns the person's age in whole years.
+     * This is the period of time between the birthdate and today's date.
+     * This a "derived" property, i.e., it is "calculated" from existing data, not a new field.
+     *
+     * CUSTOMER QUESTION: what do we return if this value is < 1? (e.g., 8 months)
+     */
+
+    public int age() {
+        return Period.between(birthDate(), LocalDate.now()).getYears();
+    }
+
+    public String name() {
         return name;
     }
 
-    public LocalDate getBirthDate() {
+    public LocalDate birthDate() {
         return birthDate;
     }
 
