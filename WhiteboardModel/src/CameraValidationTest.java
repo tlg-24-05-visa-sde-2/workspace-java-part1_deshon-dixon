@@ -46,7 +46,7 @@ class CameraValidationTest {
         System.out.println("Test 4");
         System.out.println("------");
         System.out.println();
-        cam.setResolution("360p");
+        cam.setResolution(Resolution.FULL_ULTRA_HD);
         System.out.println();
         System.out.println("[" + "Resolution set to: " + cam.getResolution() + "]");
         System.out.println();
@@ -57,7 +57,7 @@ class CameraValidationTest {
         System.out.println();
         System.out.println("Test 5");
         System.out.println("------");
-        cam.setResolution("720p");
+        cam.setResolution(Resolution.HD);
         System.out.println();
         System.out.println("[" + "Resolution set to: " + cam.getResolution() + "]");
         System.out.println();
@@ -68,7 +68,7 @@ class CameraValidationTest {
         System.out.println();
         System.out.println("Test 6");
         System.out.println("------");
-        cam.setResolution("5.9K");
+        cam.setResolution(Resolution.ULTRA_HD);
         System.out.println();
         System.out.println("[" + "Resolution set to: " + cam.getResolution() + "]");
         System.out.println();

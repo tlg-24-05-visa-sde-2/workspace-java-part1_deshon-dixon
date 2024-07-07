@@ -3,16 +3,9 @@ class Camera {
     public static final int MIN_ISO = 160;
     public static final int MAX_ISO = 5000;
 
-    private static int cameraCount = 0;
-
-    // static accessor methods
-    public static int getCameraCount() {
-        return cameraCount;
-    }
-
     // properties or attributes
-    private String brand = "Canon EOS Rebel T7i";
-    private String resolution = "1080p";
+    private String cameraName = "Canon EOS Rebel T7i";
+    private Resolution resolution = Resolution.HD;
     private int iso = 160;
     private int shutterSpeed = 50;
     private double frameRate = 30.0;
@@ -20,21 +13,26 @@ class Camera {
 
     // constructors
     public Camera() {
-        cameraCount++;
     }
 
-    public Camera(String brand) {
+    public Camera(String cameraName) {
         this();
-        setBrand(brand);
+        setCameraName(cameraName);
     }
 
-    public Camera(String brand, String resolution) {
-        this(brand);
+    public Camera(String cameraName, Resolution resolution) {
+        this(cameraName);
         setResolution(resolution);
     }
 
-    public Camera(String brand, String resolution, int iso, int shutterSpeed, double frameRate, WhiteBalance whiteBalance) {
-        this(brand, resolution);
+    public Camera(String cameraName, Resolution resolution, double frameRate, WhiteBalance whiteBalance) {
+        this(cameraName, resolution);
+        setFrameRate(frameRate);
+        setWhiteBalance(whiteBalance);
+    }
+
+    public Camera(String cameraName, Resolution resolution, int iso, int shutterSpeed, double frameRate, WhiteBalance whiteBalance) {
+        this(cameraName, resolution);
         setIso(iso);
         setShutterSpeed(shutterSpeed);
         setFrameRate(frameRate);
@@ -52,12 +50,12 @@ class Camera {
     }
     private void start() {
         System.out.println();
-        System.out.println("Your " + getBrand() + " is starting... ");
+        System.out.println("Your " + getCameraName() + " is starting... ");
         System.out.println();
     }
 
     private void cameraOn() {
-        System.out.println("Your " + getBrand() + " has turned on: " + "\n" + "Resolution: " + getResolution() + "\n" + "ISO: " + getIso() + "\n" + "Shutter Speed: " + "1/" + getShutterSpeed() + "th" + "\n" + "FrameRate: " + getFrameRate() + "fps" + "\n" + "White Balance: " + getWhiteBalance());
+        System.out.println("Your " + getCameraName() + " has turned on: " + "\n" + "Resolution: " + getResolution() + "\n" + "ISO: " + getIso() + "\n" + "Shutter Speed: " + "1/" + getShutterSpeed() + "th" + "\n" + "FrameRate: " + getFrameRate() + "fps" + "\n" + "White Balance: " + getWhiteBalance());
         System.out.println();
     }
 
@@ -77,34 +75,25 @@ class Camera {
     }
 
     public void cameraOff() {
-        System.out.println("Your " + getBrand() + " has been turned off. ");
+        System.out.println("Your " + getCameraName() + " has been turned off. ");
         System.out.println();
     }
 
     // accessor methods
-    public String getBrand() {
-        return brand;
+    public String getCameraName() {
+        return cameraName;
     }
 
-    public void setBrand(String brand) {
-        this.brand = brand;
+    public void setCameraName(String cameraName) {
+        this.cameraName = cameraName;
     }
 
-    public String getResolution() {
+    public Resolution getResolution() {
         return resolution;
     }
 
-    public void setResolution(String resolution) {
-        if (resolution.equalsIgnoreCase("720p") ||
-                resolution.equalsIgnoreCase("1080p") ||
-                resolution.equalsIgnoreCase("4K") ||
-                resolution.equalsIgnoreCase("5.9K")) {
-            this.resolution = resolution;
-        } else {
-            System.out.println("ERROR: Resolution provided is invalid. " +
-                    "Resolution will default to: " + getResolution() + ". " +
-                    "Must be 720p, 1080p, 4K, or 5.9K.");
-        }
+    public void setResolution(Resolution resolution) {
+        this.resolution = resolution;
     }
 
     public int getIso() {
@@ -112,7 +101,6 @@ class Camera {
     }
 
     public void setIso(int iso) {
-
         if (iso >= MIN_ISO && iso <= MAX_ISO) {
             this.iso = iso;
         } else {
@@ -136,10 +124,6 @@ class Camera {
         this.frameRate = frameRate;
     }
 
-    public static void setCameraCount(int cameraCount) {
-        Camera.cameraCount = cameraCount;
-    }
-
     public WhiteBalance getWhiteBalance() {
         return whiteBalance;
     }
@@ -149,6 +133,6 @@ class Camera {
     }
 
     public String toString() {
-        return String.format("Camera: Brand = %s, Resolution = %s, ISO = %s, Shutter Speed = %s, Frame Rate = %.0f, White Balance = %s ", getBrand(), getResolution(), getIso(), getShutterSpeed(), getFrameRate(), getWhiteBalance());
+        return String.format("Camera: Brand = %s, Resolution = %s, ISO = %s, Shutter Speed = %s, Frame Rate = %.0f, White Balance = %s ", getCameraName(), getResolution(), getIso(), getShutterSpeed(), getFrameRate(), getWhiteBalance());
     }
 }
