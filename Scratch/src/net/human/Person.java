@@ -1,9 +1,11 @@
+package net.human;
+
 import java.time.LocalDate;
 import java.time.Period;
 
 /*
  * An immutable class.
- * That is, a class definition written in such a way that instance of it (Person objects).
+ * That is, a class definition written in such a way that instance of it (net.people.Person objects).
  * once created, cannot have their properties changed.
  * There are simply no public methods to do so, i.e., getters, but NO setters.
  */

@@ -1,4 +1,6 @@
-class Movie {
+package net.flix;
+
+public class Movie {
     // fields or instance variables
     private String title;
     private Integer releaseYear;
@@ -68,9 +70,9 @@ class Movie {
     }
 
     public String toString() {
-        return String.format("Movie: title=%s, releaseYear=%s, revenue=%s, rating=%s, genre=%s", getTitle(), getReleaseYear(), (getRevenue() == null) ? "null" : String.format("%,.2f", getRevenue()), getRating(), getGenre());
+        return String.format("net.flix.Movie: title=%s, releaseYear=%s, revenue=%s, rating=%s, genre=%s", getTitle(), getReleaseYear(), (getRevenue() == null) ? "null" : String.format("%,.2f", getRevenue()), getRating(), getGenre());
 
-//        return "Movie: title= " + getTitle() +
+//        return "net.flix.Movie: title= " + getTitle() +
 //                ", releaseYear= " + getReleaseYear() +
 //                ", revenue= " + getRevenue() +
 //                ", rating= " + getRating() +

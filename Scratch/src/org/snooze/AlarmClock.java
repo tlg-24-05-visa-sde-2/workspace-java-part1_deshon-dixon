@@ -1,5 +1,5 @@
-/*
- * Application class to model the workings of an AlarmClock.
+package org.snooze;/*
+ * Application class to model the workings of an com.snooze.AlarmClock.
  * This class will NOT have a main() method, most such classes do not.
  */
 
@@ -10,7 +10,7 @@ class AlarmClock {
     public static final int MAX_INTERVAL = 20;
     private static int nextId = 1;
 
-    // everything below here is present in EACH instance of AlarmClock
+    // everything below here is present in EACH instance of com.snooze.AlarmClock
 
     // properties or attributes - these are called "instance variables" or "fields" in Java
     private int id;
