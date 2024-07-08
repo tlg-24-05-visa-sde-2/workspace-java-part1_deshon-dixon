@@ -11,5 +11,10 @@ class CalculatorClient {
         System.out.println();
 
         System.out.println("default version: " + Calculator.randomInt() + "\n" + "min-max version: " + Calculator.randomInt(5,16) + "\n" + "one to max version: " + Calculator.randomInt(20));
+
+        System.out.println();
+
+        System.out.println("Average is: " + Calculator.avg(3,4,9,2,3));
+        System.out.println("Average of 12 is: " + Calculator.avg(12));
     }
 }

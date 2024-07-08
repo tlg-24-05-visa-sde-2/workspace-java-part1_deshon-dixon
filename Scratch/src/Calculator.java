@@ -16,6 +16,20 @@ class Calculator {
     }
 
     /*
+     * Returns the average of the supplied integers.
+     * WATCH OUT: the client caller can pass zero or more ints for this 'values'
+     */
+    public static double avg(int first, int... rest) {    // first: 3, rest: 4, 9, 2, 3
+        // 'rest' is automatically an array of int[] inside here
+        double sum = first;
+
+        for (int value : rest) {
+            sum = sum + value;  // sum += value
+        }
+        return sum / (rest.length + 1);
+    }
+
+    /*
      * Returns a random integer between 'min' and 'max' (inclusive).
      * TODO: implement this algorithm
      */
