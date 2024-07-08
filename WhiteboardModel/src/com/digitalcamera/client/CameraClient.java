@@ -1,3 +1,9 @@
+package com.digitalcamera.client;
+
+import com.digitalcamera.Camera;
+import com.digitalcamera.Resolution;
+import com.digitalcamera.WhiteBalance;
+
 class CameraClient {
 
     public static void main(String[] args) {
@@ -10,6 +16,7 @@ class CameraClient {
 
         cam1.cameraAction();
         System.out.println(cam1 + "\n" + "---------------------------------");
+        System.out.println();
         cam2.cameraAction();
         System.out.println(cam2 + "\n" + "---------------------------------");
     }

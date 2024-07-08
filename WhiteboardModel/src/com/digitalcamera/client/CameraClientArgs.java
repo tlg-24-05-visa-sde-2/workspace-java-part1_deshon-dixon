@@ -1,3 +1,9 @@
+package com.digitalcamera.client;
+
+import com.digitalcamera.Camera;
+import com.digitalcamera.Resolution;
+import com.digitalcamera.WhiteBalance;
+
 import java.util.Arrays;
 
 class CameraClientArgs {
@@ -5,9 +11,9 @@ class CameraClientArgs {
     public static void main(String[] args) {
         if (args.length < 4) {
             String usage = "Usage: java CameraClientArgs <cameraName> <resolution> <frameRate> <whiteBalance>";
-            String example = "Example: java CameraClientArgs Blackmagic HD 60 AUTO";
-            String note = "Note: supported resolutions are " + Arrays.toString(Resolution.values());
-            String note2 = "Note: supported white balances are " + Arrays.toString(WhiteBalance.values());
+            String example = "Example: java CameraClientArgs BlackMagic FULL_HD 60 AUTO";
+            String note = "Note: Supported resolutions: HD (" + Resolution.HD + "), FULL_HD (" + Resolution.FULL_HD + "), ULTRA_HD (" + Resolution.ULTRA_HD + "), and FULL_ULTRA_HD (" + Resolution.FULL_ULTRA_HD + ")";
+            String note2 = "Note: Supported white balances are " + Arrays.toString(WhiteBalance.values());
             System.out.println(usage);
             System.out.println(example);
             System.out.println(note);

@@ -1,4 +1,6 @@
-enum Resolution {
+package com.digitalcamera;
+
+public enum Resolution {
     HD("720p"),
     FULL_HD("1080p"),
     ULTRA_HD("4K"),

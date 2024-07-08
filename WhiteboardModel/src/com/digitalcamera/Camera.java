@@ -1,9 +1,11 @@
-class Camera {
-    // static fields
+package com.digitalcamera;
+
+public class Camera {
+    // STATIC FIELDS
     public static final int MIN_ISO = 160;
     public static final int MAX_ISO = 5000;
 
-    // properties or attributes
+    // PROPERTIES/ ATTRIBUTES
     private String cameraName = "Canon EOS Rebel T7i";
     private Resolution resolution = Resolution.HD;
     private int iso = 160;
@@ -11,7 +13,7 @@ class Camera {
     private double frameRate = 30.0;
     private WhiteBalance whiteBalance = WhiteBalance.AUTO;
 
-    // constructors
+    // CONSTRUCTORS
     public Camera() {
     }
 
@@ -39,7 +41,7 @@ class Camera {
         setWhiteBalance(whiteBalance);
     }
 
-    // functions
+    // FUNCTIONS
     public void cameraAction() {
         start();
         cameraOn();
@@ -48,6 +50,7 @@ class Camera {
         save();
         cameraOff();
     }
+
     private void start() {
         System.out.println();
         System.out.println("Your " + getCameraName() + " is starting... ");
@@ -55,7 +58,7 @@ class Camera {
     }
 
     private void cameraOn() {
-        System.out.println("Your " + getCameraName() + " has turned on: " + "\n" + "Resolution: " + getResolution() + "\n" + "ISO: " + getIso() + "\n" + "Shutter Speed: " + "1/" + getShutterSpeed() + "th" + "\n" + "FrameRate: " + getFrameRate() + "fps" + "\n" + "White Balance: " + getWhiteBalance());
+        System.out.println("Your " + getCameraName() + " has turned on: " + "\n" + "Resolution: " + getResolution() + "\n" + "ISO: " + getIso() + "\n" + "ShutterSpeed: " + "1/" + getShutterSpeed() + "th" + "\n" + "FrameRate: " + getFrameRate() + "fps" + "\n" + "WhiteBalance: " + getWhiteBalance());
         System.out.println();
     }
 
@@ -79,7 +82,7 @@ class Camera {
         System.out.println();
     }
 
-    // accessor methods
+    // ACCESSOR METHODS
     public String getCameraName() {
         return cameraName;
     }
@@ -133,6 +136,12 @@ class Camera {
     }
 
     public String toString() {
-        return String.format("Camera: Brand = %s, Resolution = %s, ISO = %s, Shutter Speed = %s, Frame Rate = %.0f, White Balance = %s ", getCameraName(), getResolution(), getIso(), getShutterSpeed(), getFrameRate(), getWhiteBalance());
+        return "Camera: " +
+                "CameraName= " + getCameraName() + '\'' +
+                ", Resolution= " + getResolution() +
+                ", ISO= " + getIso() +
+                ", ShutterSpeed= " + getShutterSpeed() +
+                ", FrameRate= " + getFrameRate() +
+                ", WhiteBalance= " + getWhiteBalance();
     }
 }

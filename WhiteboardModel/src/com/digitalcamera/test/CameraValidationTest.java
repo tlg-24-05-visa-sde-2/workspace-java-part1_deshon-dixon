@@ -1,3 +1,8 @@
+package com.digitalcamera.test;
+
+import com.digitalcamera.Camera;
+import com.digitalcamera.Resolution;
+
 class CameraValidationTest {
 
     public static void main(String[] args) {
@@ -5,7 +10,7 @@ class CameraValidationTest {
 
         //    ---------- ISO VALIDATION TESTS -----------
 
-        // ISO validation: 1
+        // ISO VALIDATION: 1
         System.out.println();
         System.out.println("Test 1");
         System.out.println("------");
@@ -16,7 +21,7 @@ class CameraValidationTest {
         System.out.println(cam);
         System.out.println();
 
-        // ISO validation: 2
+        // ISO VALIDATION: 2
         System.out.println();
         System.out.println("Test 2");
         System.out.println("------");
@@ -28,7 +33,7 @@ class CameraValidationTest {
         System.out.println(cam);
         System.out.println();
 
-        // ISO validation: 3
+        // ISO VALIDATION: 3
         System.out.println();
         System.out.println("Test 3");
         System.out.println("------");
@@ -41,7 +46,7 @@ class CameraValidationTest {
 
         //    ---------- RESOLUTION VALIDATION TESTS -----------
 
-        // Resolution validation: 1
+        // RESOLUTION VALIDATION: 1
         System.out.println();
         System.out.println("Test 4");
         System.out.println("------");
@@ -53,24 +58,24 @@ class CameraValidationTest {
         System.out.println(cam);
         System.out.println();
 
-        // Resolution validation: 2
+        // RESOLUTION VALIDATION: 2
         System.out.println();
         System.out.println("Test 5");
         System.out.println("------");
         cam.setResolution(Resolution.HD);
         System.out.println();
-        System.out.println("[" + "Resolution set to: " + cam.getResolution() + "]");
+        System.out.println("[" + "com.camera.Resolution set to: " + cam.getResolution() + "]");
         System.out.println();
         System.out.println(cam);
         System.out.println();
 
-        // Resolution validation: 3
+        // RESOLUTION VALIDATION: 3
         System.out.println();
         System.out.println("Test 6");
         System.out.println("------");
         cam.setResolution(Resolution.ULTRA_HD);
         System.out.println();
-        System.out.println("[" + "Resolution set to: " + cam.getResolution() + "]");
+        System.out.println("[" + "com.camera.Resolution set to: " + cam.getResolution() + "]");
         System.out.println();
         System.out.println(cam);
         System.out.println();
