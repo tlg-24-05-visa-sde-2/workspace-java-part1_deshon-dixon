@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 /*
  * Application or system class to model the workings of a television.
  * It has properties/attributes, it has business methods, but NO main() method.
@@ -7,11 +9,29 @@ class Television {
     public static final int MIN_VOLUME = 0;
     public static final int MAX_VOLUME = 100;
 
+    // disclaimer: the proper way would be to use a Brand enum
+    // we will do it this way for the labs, just for more practice with arrays and loops
+    public static final String[] VALID_BRANDS = {"Samsung", "LG", "Sony", "Toshiba"};
+
     private static int instanceCount = 0;
 
     // this method is also "up there" in the "shared zone," it does not execute inside a Television object
     public static int getInstanceCount() {
         return instanceCount;
+    }
+
+    // Recall: all static methods are called as Television.methodName()
+    // in this case, that means Television.isValidBrand()
+    public static boolean isValidBrand(String brand) {
+        boolean valid = false;
+
+        for (String currentBrand : VALID_BRANDS) {
+            if (currentBrand.equals(brand)) {    // we have a match
+                valid = true;
+                break;                           // no need to keep looking
+            }
+        }
+        return valid;
     }
 
     // -------------------------------------
@@ -74,13 +94,12 @@ class Television {
         return brand;
     }
 
+    // VALID_BRANDS contains ["Samsung", "LG", "Sony", "Toshiba"]
     public void setBrand(String brand) {
-        if (brand.equalsIgnoreCase("Samsung") ||
-                brand.equalsIgnoreCase("LG") ||
-                brand.equalsIgnoreCase("Sony")) {
-            this.brand = brand.toUpperCase();
+        if (isValidBrand(brand)) {
+            this.brand = brand;
         } else {
-            System.out.println("ERROR: Invalid TV Brand. TV Brand must be Samsung, LG, or Sony.");
+            System.out.println("ERROR: Invalid brand: " + brand + "\n" + "Valid brands are: " + Arrays.toString(VALID_BRANDS));
         }
     }
 
@@ -93,7 +112,6 @@ class Television {
             this.volume = volume;
             isMuted = false;
         } else {
-//            System.out.println("ERROR: Invalid volume: " + volume + ". Volume must be between " + MIN_VOLUME + " and " + MAX_VOLUME + "." + " Volume will remain: " + getVolume());
             System.out.printf(" ERROR: Invalid volume %s. Volume must be between %s and %s. Volume will remain: %s. \n", volume, MIN_VOLUME, MAX_VOLUME, getVolume());
         }
     }
@@ -115,10 +133,6 @@ class Television {
 
         return String.format("Television: brand=%s volume=%s displayType=%s", getBrand(), volumeString, getDisplay());
 
-//        return "Television: " +
-//                "Brand = " + getBrand() +
-//                ", Volume = " + volumeString +
-//                ", DisplayType = " + getDisplay();
     }
 
 }

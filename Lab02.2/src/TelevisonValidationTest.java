@@ -116,5 +116,18 @@ class TelevisonValidationTest {
         tv.setDisplay(DisplayType.LED);
         System.out.println(tv);
         System.out.println();
-}
+
+        // Brand validation: 5
+        System.out.println();
+        System.out.println("BRAND TEST: 5");
+        System.out.println("-------------");
+        System.out.println();
+        tv.setBrand("INVALID");
+        System.out.println();
+        System.out.println("[" + "Brand set to: " + tv.getBrand() + "]");
+        System.out.println();
+        tv.setDisplay(DisplayType.LED);
+        System.out.println(tv);
+        System.out.println();
+    }
 }
