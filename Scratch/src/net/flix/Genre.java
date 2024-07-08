@@ -1,7 +1,7 @@
 package net.flix;
 
 public enum Genre {
-    ANIME("Anime"),     // each of these is calling the net.flix.Genre() constructor below
+    ANIME("Anime"),     // each of these is calling the Genre() constructor below
     DRAMA("Drama... "),
     HORROR("Horror!!!"),
     DOCUMENTARY("Documentary"),
@@ -15,7 +15,7 @@ public enum Genre {
 
     // implicitly private, no "new" from outside
     Genre(String display) {
-        System.out.println("net.flix.Genre constructor called");
+        System.out.println("Genre constructor called");
         this.display = display;
     }
 
