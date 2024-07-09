@@ -15,8 +15,8 @@
 import java.time.*;
 import java.time.format.*;
 import java.time.temporal.TemporalAdjuster;
-
 import static java.time.temporal.TemporalAdjusters.*;
+import static java.time.DayOfWeek.*;
 
 class DerivedDateTimeTest {
 
@@ -86,7 +86,7 @@ class DerivedDateTimeTest {
      */
     public static void testLaborDay() {
         LocalDate sept1 = LocalDate.of(1994, 9, 1);
-        LocalDate laborDay = sept1.with(nextOrSame(DayOfWeek.MONDAY));
+        LocalDate laborDay = sept1.with(nextOrSame(MONDAY));
         System.out.println(laborDay);
     }
 
@@ -98,7 +98,7 @@ class DerivedDateTimeTest {
      */
     public static void testElectionDay() {
         LocalDate nov1 = LocalDate.of(2024, 11, 1);
-        LocalDate election = nov1.with(nextOrSame(DayOfWeek.MONDAY)).plusDays(1);
+        LocalDate election = nov1.with(nextOrSame(MONDAY)).plusDays(1);
         System.out.println(election);
     }
 
@@ -113,7 +113,7 @@ class DerivedDateTimeTest {
     public static void testAnniversary() {
         LocalDate wedding = LocalDate.of(1969, 6, 6);
         LocalDate anniversary = wedding.plusYears(50);
-        LocalDate party = anniversary.with(nextOrSame(DayOfWeek.SATURDAY));
+        LocalDate party = anniversary.with(nextOrSame(SATURDAY));
         System.out.println(party);
         System.out.println(party.getDayOfWeek());
     }
