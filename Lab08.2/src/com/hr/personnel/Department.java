@@ -10,23 +10,25 @@ package com.hr.personnel;
 
 /**
  * The Department class manages employees.
- *
+ * <p>
  * Properties:
  *   String name
  *   String location
- *   Employee[] employees  the Employees in this department.
- *   int currentIndex      internal counter for number of employees in the department.
- *
+ *   Employee[] employees the Employees in this department.
+ *   int currentIndex internal counter for number of employees in the department.
+ * <p>
  * Methods (excluding get/set methods):
- *   void listEmployees()  print info on all employees in the department.
- *   void workEmployees()  make all employees in the department work.
- *   String toString()     self-explanatory.
+ *   void listEmployees() print info on all employees in the department.
+ *   void workEmployees() make all employees in the department work.
+ *   String toString() self-explanatory.
  */
 public class Department {
     // fields
     private String name;
     private String location;
-    private Employee[] employees = new Employee[100];
+
+    // this a 1-to-Many relationships
+    private final Employee[] employees = new Employee[100]; // 100 null slots because nothing has been added to array yet
     private int currentIndex = 0;  // for dealing with the array
 
     // constructors
