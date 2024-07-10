@@ -6,6 +6,15 @@ public class SalariedEmployee extends Employee {
     // PROPERTIES
     private double salary;
 
+    //METHODS
+    @Override
+    public void pay(){
+        System.out.println(getName() + " is paid salary " + getSalary());
+    }
+
+    public void takeVacation() {
+        System.out.println(getName() + " is on vacation");
+    }
     // CONSTRUCTORS
     public SalariedEmployee() {
     }
@@ -28,7 +37,8 @@ public class SalariedEmployee extends Employee {
         this.salary = salary;
     }
 
+    @Override
     public String toString() {
-        return "SalariedEmployee: " + "name=" + getName() + ", hireDate=" + getHireDate() + ", salary=" + getSalary();
+        return super.toString() + getHireDate() + ", salary=" + getSalary();
     }
 }
