@@ -9,11 +9,14 @@
 package com.hr.corp;
 
 import gov.irs.TaxPayer;
+import org.w3c.dom.ls.LSOutput;
 
 /**
  * Corporate entity - also pays taxes.
  */
 public class Corporation implements TaxPayer {
+    public static final double DEFAULT_STANDARD_DEDUCTION = 1_000_000;
+
     private String name;
 
     public Corporation(String name) {
@@ -29,6 +32,11 @@ public class Corporation implements TaxPayer {
     @Override
     public void fileReturn() {
         System.out.println(getName() + " filed no return - we sent our lawyers instead.");
+    }
+
+    @Override
+    public double getStandardDeduction() {
+        return DEFAULT_STANDARD_DEDUCTION;
     }
 
     public String getName() {

@@ -11,7 +11,7 @@ public class HourlyEmployee extends Employee implements TaxPayer {
 
     //METHODS
     @Override
-    public void pay(){
+    public void pay() {
         double payment = getRate() * getHours();
         System.out.println(getName() + " is paid hourly " + payment);
     }

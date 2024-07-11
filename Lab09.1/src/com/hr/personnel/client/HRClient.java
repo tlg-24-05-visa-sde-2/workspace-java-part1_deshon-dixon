@@ -29,8 +29,8 @@ class HRClient {
         dept.addEmployee(new HourlyEmployee("Julie", LocalDate.of(2000, 2, 2), 24, 40));
         dept.addEmployee(new HourlyEmployee("Marcus", LocalDate.of(2002, 3, 10), 30, 40));
         dept.addEmployee(new SalariedEmployee("Jason", LocalDate.of(1998, 8, 24), 750000));
-        dept.addEmployee(new SalariedEmployee("Donte", LocalDate.of(1995, 10, 5),  95000));
-        dept.addEmployee(new Executive("Fred", LocalDate.of(1982, 3, 12),  900000));
+        dept.addEmployee(new SalariedEmployee("Donte", LocalDate.of(1995, 10, 5), 95000));
+        dept.addEmployee(new Executive("Fred", LocalDate.of(1982, 3, 12), 900000));
 
         // list its Employees
         System.out.println("\nList employees:");

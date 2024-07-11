@@ -12,15 +12,15 @@ package com.hr.personnel;
  * The Department class manages employees.
  * <p>
  * Properties:
- *   String name
- *   String location
- *   Employee[] employees the Employees in this department.
- *   Int currentIndex internal counter for number of employees in the department.
+ * String name
+ * String location
+ * Employee[] employees the Employees in this department.
+ * Int currentIndex internal counter for number of employees in the department.
  * <p>
  * Methods (excluding get/set methods):
- *   void listEmployees() print info on all employees in the department.
- *   Void workEmployees() make all employees in the department work.
- *   String toString() self-explanatory.
+ * void listEmployees() print info on all employees in the department.
+ * Void workEmployees() make all employees in the department work.
+ * String toString() self-explanatory.
  */
 public class Department {
     // fields
@@ -60,7 +60,7 @@ public class Department {
             employees[i].pay();
         }
     }
-    
+
     public void holidayBreak() {
         for (int i = 0; i < currentIndex; i++) {
             if (employees[i] instanceof SalariedEmployee salariedEmployee) {

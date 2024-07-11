@@ -10,7 +10,7 @@ public class SalariedEmployee extends Employee implements TaxPayer {
 
     //METHODS
     @Override
-    public void pay(){
+    public void pay() {
         System.out.println(getName() + " is paid salary " + getSalary());
     }
 
@@ -23,6 +23,7 @@ public class SalariedEmployee extends Employee implements TaxPayer {
     public void takeVacation() {
         System.out.println(getName() + " is on vacation");
     }
+
     // CONSTRUCTORS
     public SalariedEmployee() {
     }
