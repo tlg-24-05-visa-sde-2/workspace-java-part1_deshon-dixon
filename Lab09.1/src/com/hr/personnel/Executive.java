@@ -10,6 +10,11 @@ public class Executive extends SalariedEmployee {
         System.out.println(getName() + " is enjoying a nice round of golf.");
     }
 
+    @Override  // interface Taxpayer (default method)
+    public void fileReturn() {
+        System.out.println("Return filed electronically.");
+    }
+
     // CONSTRUCTORS
     public Executive() {
     }
