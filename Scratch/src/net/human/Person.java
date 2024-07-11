@@ -6,7 +6,7 @@ import java.time.Period;
 /*
  * An immutable class.
  * That is, a class definition written in such a way that instance of it (net.people.Person objects).
- * once created, cannot have their properties changed.
+ * Once created, cannot have their properties changed.
  * There are simply no public methods to do so, i.e., getters, but NO setters.
  */
 class Person {
@@ -21,7 +21,7 @@ class Person {
     /*
      * Returns the person's age in whole years.
      * This is the period of time between the birthdate and today's date.
-     * This a "derived" property, i.e., it is "calculated" from existing data, not a new field.
+     * This is a "derived" property, i.e.; it is "calculated" from existing data, not a new field.
      *
      * CUSTOMER QUESTION: what do we return if this value is < 1? (e.g., 8 months)
      */
@@ -38,7 +38,9 @@ class Person {
         return birthDate;
     }
 
+    @Override
     public String toString() {
-        return String.format("Name: %s, Birth Date: %s", name, birthDate);
+        return String.format("%s: name=%s, birthDate=%s",
+                getClass().getSimpleName(), name, birthDate);
     }
 }
