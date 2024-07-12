@@ -31,7 +31,7 @@ class HRClient {
         dept.addEmployee(new SalariedEmployee("Amilia", LocalDate.of(1999, 2, 6), 1250.0));
 
         try {
-            dept.addEmployee(new HourlyEmployee("Julie",    LocalDate.of(2000, 2, 2), 5.0, 30.0));
+            dept.addEmployee(new HourlyEmployee("Julie",    LocalDate.of(2000, 2, 2), 35.0, 30.0));
         } catch (IllegalWageException e) {
             System.out.println("ERROR: " + e);
         }
