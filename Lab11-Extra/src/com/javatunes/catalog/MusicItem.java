@@ -18,7 +18,7 @@ import java.sql.Date;
  */
 public class MusicItem
 implements Comparable<MusicItem> {
-    private Long id;
+    private final Long id;
     private String title;
     private String artist;
     private Date releaseDate;
@@ -94,8 +94,7 @@ implements Comparable<MusicItem> {
     public boolean equals(Object compare) {
         boolean result = false;
 
-        if (compare instanceof MusicItem) {
-            MusicItem other = (MusicItem) compare;
+        if (compare instanceof MusicItem other) {
             result = other.getId().equals(this.getId());
         }
         return result;

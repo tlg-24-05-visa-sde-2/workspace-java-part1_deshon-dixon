@@ -3,7 +3,6 @@ package com.transportation;
 public class DestinationUnreachableException extends Exception {
 
     public DestinationUnreachableException() {
-        super();
     }
 
     public DestinationUnreachableException(String message) {

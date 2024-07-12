@@ -18,15 +18,18 @@ public class Car extends Vehicle {
 
     // BUSINESS METHODS
     public void start() {
-        System.out.println("Car started");
+        System.out.println("Car started.");
     }
 
     public void stop() {
-        System.out.println("Car stopped");
+        System.out.println("Car stopped.");
     }
 
-    public void moveTo(String location) {
-        System.out.println(getMake() + " " + getModel() + " moving to " + location);
+    public void moveTo(String location) throws DestinationUnreachableException {
+        if (location.equalsIgnoreCase("West Seattle")) {
+            throw new DestinationUnreachableException("Bridge is closed.");
+        }
+        System.out.println(getMake() + " " + getModel() + " moving to " + location + ".");
     }
 
     // ACCESSOR METHODS
