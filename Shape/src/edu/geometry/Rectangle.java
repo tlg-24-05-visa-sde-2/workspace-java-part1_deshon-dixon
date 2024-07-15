@@ -26,6 +26,11 @@ public class Rectangle implements Shape {
     }
 
     @Override
+    public double getPerimeter() {
+        return 2 * (length + width);
+    }
+
+    @Override
     public String toString() {
         return getClass().getSimpleName() + ": length=" + getLength() + ", width=" + getWidth();
     }
