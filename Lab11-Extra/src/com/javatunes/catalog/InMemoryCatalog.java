@@ -8,9 +8,7 @@
 
 package com.javatunes.catalog;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
+import java.util.*;
 
 // OF COURSE THIS CLASS DOESN'T COMPILE
 // Your first job is to fulfill the contract that this class has signed.
@@ -38,6 +36,71 @@ public class InMemoryCatalog implements Catalog {
         new MusicItem(18L, "Escape",                    "Journey",                   "1981-02-25", 11.97, MusicCategory.CLASSIC_ROCK))
     );
 
+    /**
+     * Returns the item with the given id, or null if not found.
+     */
+    @Override
+    public MusicItem findById(Long id) {      // pretend that this comes in as 6
+        // declare return variable
+        for (MusicItem item : catalogData) {
+            if (item.getId().equals(id)) {
+                return item;
+            }
+        }
+        return null;
+    };
+
+    /**
+     * Returns a collection of items that match the supplied keyword.
+     * This is basically a search method.
+     * <p>
+     * A match is defined as any item whose title or artist contains the keyword.
+     * Searches are to be case-insensitive.
+     * <p>
+     * A no-matches result should return an empty collection (not null).
+     */
+    @Override
+    public Collection<MusicItem> findByKeyword(String keyword) {
+        List<MusicItem> result = new ArrayList<>();
+        for (MusicItem item : catalogData) {
+            if (item.getTitle().contains(keyword) ||
+                    item.getArtist().contains(keyword)) {
+                result.add(item);
+            }
+        }
+        return result;
+    }
+
+    /**
+     * Returns a collection of items that are of the supplied genre (category).
+     */
+    @Override
+    public Collection<MusicItem> findByCategory(MusicCategory category) {
+        Collection<MusicItem> result = new ArrayList<>();
+        for (MusicItem item : catalogData) {
+            if (item.getMusicCategory().equals(category)) {
+                result.add(item);
+            }
+        }
+        return result;
+    }
+
+    /**
+     * Size of the catalog.
+     */
+    @Override
+    public int size() {
+        return catalogData.size();
+    }
+
+    /**
+     * Read-only view of the entire catalog.
+     * See java.util.Collections class (an all-static utility class) for help here.
+     */
+    @Override
+    public Collection<MusicItem> getAll() {
+        return Collections.unmodifiableCollection(catalogData);
+    }
 
     /**
      * After you've satisfied your contractual obligations above, do these additional tasks.
@@ -65,21 +128,51 @@ public class InMemoryCatalog implements Catalog {
      * TASK: find all MusicItems where title is same as artist.
      * For example, Madonna's first album is simply titled, "Madonna."
      */
+    public Collection<MusicItem> findBySelfTitle() {
+        Collection<MusicItem> result = new ArrayList<>();
+        for (MusicItem item : catalogData) {
+            if (item.getTitle().equals(item.getArtist())) {
+                result.add(item);
+            }
+        }
+        return result;
+    }
 
 
     /**
      * TASK: find all "rock" items whose price is less than or equal to the specified price.
+     * BUSINESS QUESTION: by "rock ", do you mean ROCK and CLASSIC
      */
+    public Collection<MusicItem> findRockLessThan(double price) {
+        Collection<MusicItem> result = new ArrayList<>();
+        for (MusicItem item : catalogData) {
+            if (item.getPrice() <= price && item.getMusicCategory().equals(MusicCategory.ROCK) ||
+                    item.getMusicCategory().equals(MusicCategory.CLASSIC_ROCK)) {
+                    result.add(item);
+                }
+            }
+        return result;
+    }
 
 
     /**
      * TASK: how many items of the specified genre (MusicCategory) do we sell?
      */
-
+    public int genreCount() {
+        int count = 0;
+        for (MusicItem item : catalogData) {
+            if (item.getMusicCategory() == MusicCategory.POP) {
+                count++;
+            }
+        }
+        return count;
+    }
 
     /**
      * TASK: determine average price of our low-cost, extensive catalog of music.
      */
+//    public double findAveragePrice() {
+//    }
 
 
     /**

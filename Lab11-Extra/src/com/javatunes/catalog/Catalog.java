@@ -15,28 +15,28 @@ public interface Catalog {
     /**
      * Returns the item with the given id, or null if not found.
      */
-    MusicItem findById(Long id);
+    public MusicItem findById(Long id);
 
     /**
      * Returns a collection of items that match the supplied keyword.
      * This is basically a search method.
      *
      * A match is defined as any item whose title or artist contains the keyword.
-     * Searches are to be case insensitive.
+     * Searches are to be case-insensitive.
      *
      * A no-matches result should return an empty collection (not null).
      */
-    Collection<MusicItem> findByKeyword(String keyword);
+    public Collection<MusicItem> findByKeyword(String keyword);
 
     /**
      * Returns a collection of items that are of the supplied genre (category).
      */
-    Collection<MusicItem> findByCategory(MusicCategory category);
+    public Collection<MusicItem> findByCategory(MusicCategory category);
 
     /**
      * Size of the catalog.
      */
-    int size();
+    public int size();
 
     /**
      * Read-only view of the entire catalog.
