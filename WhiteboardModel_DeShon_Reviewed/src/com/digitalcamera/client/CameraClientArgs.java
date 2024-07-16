@@ -24,7 +24,7 @@ class CameraClientArgs {
             // JR: this is how I would build up the 'note' string
             StringBuilder noteBuilder = new StringBuilder("Note: Supported resolutions: ");
             for (Resolution resolution : Resolution.values()) {
-                noteBuilder.append(resolution.name() + "(" + resolution.toString() + ") ");
+                noteBuilder.append(resolution.name() + "(" + resolution + ") ");
             }
             String note = noteBuilder.toString();
 
