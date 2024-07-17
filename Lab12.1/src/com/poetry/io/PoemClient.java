@@ -9,6 +9,8 @@
 package com.poetry.io;
 
 import java.io.*;
+import java.nio.file.Files;
+import java.nio.file.Path;
 
 public class PoemClient {
 
@@ -16,8 +18,8 @@ public class PoemClient {
      * To run one method at a time, uncomment the call to the one you want to execute.
      */
     public static void main(String[] args) {
-        // readPoem();
-        writePoem();
+//         readPoem();
+         writePoem();
     }
 
     /**
@@ -33,14 +35,21 @@ public class PoemClient {
      * The try-with-resources below allows you to initialize the stream and auto-close it.
      */
     private static void readPoem() {
-        try (BufferedReader bufferedReader = new BufferedReader(new FileReader("famous-poem.txt"))) {
-            String line;
-            while ((line = bufferedReader.readLine()) != null) {
-                System.out.println(line);
-            }
+        try {
+            String poem = Files.readString(Path.of("famous-poem.txt"));
+            System.out.println(poem);
         } catch (IOException e) {
             e.printStackTrace();
         }
+
+//        try (BufferedReader bufferedReader = new BufferedReader(new FileReader("famous-poem.txt"))) {
+//            String line;
+//            while ((line = bufferedReader.readLine()) != null) {
+//                System.out.println(line);
+//            }
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
     }
 
     /**
@@ -55,15 +64,27 @@ public class PoemClient {
      * Use a try-with-resources to initialize the stream and auto-close it.
      */
     private static void writePoem() {
-        try (PrintWriter printWriter = new PrintWriter(new FileWriter("haiku.txt"))) {
-            String string = """   
-                    Steel probes, breath mints
-                    Nervous fingers grip armrests
-                    Smile renewed, gleaming
-                    """;
-            printWriter.println(string);
+        String haiku =
+                """
+                Steel probes, breath mints
+                Nervous fingers grip armrests
+                Smile renewed, gleaming
+                """;
+        try {
+            Files.writeString(Path.of("haiku.txt"), haiku);
         } catch (IOException e) {
             e.printStackTrace();
         }
+//        try (PrintWriter printWriter = new PrintWriter(new FileWriter("haiku.txt"))) {
+//            String haiku =
+//                    """
+//                    Steel probes, breath mints
+//                    Nervous fingers grip armrests
+//                    Smile renewed, gleaming
+//                    """;
+//            printWriter.println(haiku);
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
     }
 }
